@@ -2,34 +2,25 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import TitleHeader from "../components/TitleHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AppShowcase = () => {
+const CertificationsSection = () => {
   const sectionRef = useRef(null);
-  const rydeRef = useRef(null);
-  const libraryRef = useRef(null);
-  const ycDirectoryRef = useRef(null);
+  const awsRef = useRef(null);
+  const verizonRef = useRef(null);
+  const gcpRef = useRef(null);
 
   useGSAP(() => {
     ScrollTrigger.refresh();
-    // Animation for the main section
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1.5 }
-    );
 
-    // Animations for each app showcase
-    const cards = [rydeRef.current, libraryRef.current, ycDirectoryRef.current];
+    const cards = [awsRef.current, verizonRef.current, gcpRef.current];
 
     cards.forEach((card, index) => {
       gsap.fromTo(
         card,
-        {
-          y: 50,
-          opacity: 0,
-        },
+        { y: 50, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -45,47 +36,66 @@ const AppShowcase = () => {
   }, []);
 
   return (
-    
-    
-    <div id="work" ref={sectionRef} className="app-showcase">
+    <div id="certifications" ref={sectionRef} className="app-showcase">
       
-      <div className="w-full">
+
+      <div className="w-full mt-8 md:mt-12">
         <div className="showcaselayout">
-          <div ref={rydeRef} className="first-project-wrapper">
+          {/* AWS Certificate */}
+          <div ref={awsRef} className="first-project-wrapper">
             <div className="image-wrapper">
-              <img src="/images/project-1.png" alt="disease prediction" />
+              <img src="/images/aws-cert.png" alt="AWS Certificate" />
             </div>
             <div className="text-content">
-              <h2>
-                Predictive Diagnosis System
-              </h2>
+              <h2>AWS Cloud Practitioner</h2>
               <p className="text-white-50 md:text-xl">
-              Built a Streamlit-based web app that predicts multiple diseases by symptoms and specifically (e.g., diabetes, heart, liver) using machine learning models like SVM, Logistic Regression, and XGBoost. Enabled real-time user input, symptom analysis, and disease probability output.
+                Completed the AWS Cloud Practitioner certification, gaining foundational knowledge of cloud services, pricing models, and AWS architectural principles.
               </p>
+              <a href="https://www.credly.com/badges/f0727a5a-d87d-4184-88a6-21f6a4b7bf49/linked_in_profile" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/credly.svg"
+                  alt="AWS Certificate"
+                  className="w-6 h-6 mt-2 hover:scale-110 transition-transform duration-200"
+                />
+              </a>
             </div>
           </div>
 
+          {/* Verizon Job Simulation */}
           <div className="project-list-wrapper overflow-hidden">
-            <div className="project" ref={libraryRef}>
+            <div className="project" ref={verizonRef}>
               <div className="image-wrapper bg-[#FFEFDB]">
-                <img
-                  src="/images/project-2.png"
-                  alt="Chit-chat"
-                />
+                <img src="/images/verizon.png" alt="Verizon Job Simulation" />
               </div>
-              <h2>Real-Time Chat Application</h2>
+              <h2>Verizon Cloud Platform Job Simulation</h2>
               <p className="text-white-50 md:text-xl">
-              Built a real-time chat app with user authentication, public/private chat rooms, and live messaging. Integrated Socket.IO for real-time, bi-directional communication between clients and server. Designed responsive UI with MERN Stack.
+                Completed Forage's Verizon Cloud Platform Job Simulation. Worked on real-world DevOps tasks including cloud migration, platform scalability, and system reliability.
               </p>
+              <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/uu47f3odrfruEWjKw/aNJGnRtgfiK5fQqcR_uu47f3odrfruEWjKw_Ygx4c4oSmSF6hpjNR_1738045790558_completion_certificate.pdf" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/forage.png"
+                  alt="Verizon Badge"
+                  className="w-6 h-6 mt-2 hover:scale-110 transition-transform duration-200"
+                />
+              </a>
             </div>
 
-            <div className="project" ref={ycDirectoryRef}>
+            {/* Google Cloud Fundamentals */}
+            <div className="project" ref={gcpRef}>
               <div className="image-wrapper bg-[#FFE7EB]">
-                <img src="/images/project-3.png" alt="Optimal XI insights" />
+                <img src="/images/gcp.png" alt="Google Cloud Fundamentals" />
               </div>
-              <h2>Optimal XI Insights using Data Analytics</h2>
+              <h2>Google Cloud Fundamentals: Core Infrastructure</h2>
               <p className="text-white-50 md:text-xl">
-              Analyzed cricket data from ESPN Cricinfo to recommend optimal team lineups based on real-time player performance metrics. Visualized key stats like batting averages, bowling economy, and match scores using Power BI dashboards.              </p>
+                Gained practical experience with core GCP services including Compute Engine, Cloud Storage, IAM, and Kubernetes, focusing on building scalable cloud-native apps.
+              </p>
+              <a href="https://www.cloudskillsboost.google/public_profiles/7901c042-c6da-4320-8392-345d63320964/badges/16156534?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/google-cloud.png"
+                  alt="Google Cloud Certificate"
+                  className="w-6 h-6 mt-2 hover:scale-110 transition-transform duration-200"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -94,4 +104,4 @@ const AppShowcase = () => {
   );
 };
 
-export default AppShowcase;
+export default CertificationsSection;

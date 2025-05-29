@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1) check out the code
+      - uses: actions/checkout@v3
+
+      # 2) set up Node.js
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      # 3) install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4) run lint (if you add it) or tests
+      # - name: Run ESLint
+      #   run: npm run lint
+
+      # 5) build your Vite app
+      - name: Build
+        run: npm run build
+
+      # 6) preview build and smoke-test
+      - name: Preview & smoke-test
+        run: |
+          npm run preview -- --port 4173 &
+          sleep 5
+          curl --fail http://localhost:4173 || exit 1

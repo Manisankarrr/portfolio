@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  portfolio:
+    build: .
+    ports:
+      - "3000:3000"       # map localhost:3000 to container port 3000
+    volumes:
+      - .:/app            # mount current directory into /app (live reload)
+      - /app/node_modules # anonymous volume to avoid host/node_modules conflicts
+    environment:
+      - NODE_ENV=development

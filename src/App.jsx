@@ -17,8 +17,6 @@ const App = () => (
     <LogoShowcase />
     <FeatureCards />
     <Experience />
-    <TechStack />
-    <Testimonials />
     <Contact />
     <Footer />
   </>

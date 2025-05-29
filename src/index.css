@@ -421,16 +421,16 @@ section {
   }
 }
 /* marquee end */
-
 .card {
   --start: 0;
   position: relative;
   z-index: 40;
-  overflow: hidden;
+  overflow: visible;
   transition: border-color 1s ease-in-out;
 }
 
 .card::before {
+  pointer-events: none;
   position: absolute;
   content: "";
   width: 100%;
@@ -463,11 +463,19 @@ section {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  filter: blur(10px);
-  filter: saturate(200);
+  filter: blur(10px) saturate(200%);
 }
 
 .card:hover::before {
   opacity: 1;
 }
 
+
+/* .icon {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+} */
+
+.icon:hover {
+  transform: scale(1.1);
+}
