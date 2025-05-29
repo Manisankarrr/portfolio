@@ -212,10 +212,7 @@ const socialImgs = [
     name: "insta",
     imgPath: "/images/insta.png",
   },
-  {
-    name: "git",
-    imgPath: "/public/git.webp",
-  },
+  
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",

@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import TitleHeader from "./TitleHeader";
 import githubLogo from "/github.png";
 
 const GlowCard = ({ card, index, children }) => {

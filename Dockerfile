@@ -1,19 +1,22 @@
-# Use official Node.js 18 image
-FROM node:18
-
+# 1. Build stage
+FROM node:18 AS builder
 WORKDIR /app
 
-# copy only package.json & lockfile first, so Docker caches install
+# 1.1 Copy only what’s needed for install
 COPY package.json package-lock.json ./
-
 RUN npm ci
 
-# now copy the rest of your source
+# 1.2 Copy app sources **including index.html**
+COPY index.html ./
+COPY vite.config.js ./
 COPY public ./public
 COPY src ./src
-COPY vite.config.js ./
-# (skip copying .env thanks to .dockerignore)
 
-EXPOSE 3000
+# 1.3 Build the production bundle
+RUN npm run build
 
-CMD ["npm", "run", "dev"]
+# 2. Serve stage
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
