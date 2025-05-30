@@ -171,10 +171,21 @@ const expCards = [
       "Enabled probability-based output with symptom analysis for user diagnosis support.",
     ],
     repoLink: "https://github.com/Manisankarrr/Predictive-Diagnosis-WebApp",
+  },{
+    title: "Portfolio Website",
+    logoPath: "/images/devops.png",          // add an icon in your public/images folder
+    review:
+      "Vite, React, Tailwind CSS, GSAP animations, EmailJS, Docker, GitHub Actions CI/CD, Netlify.",
+    responsibilities: [
+      "Developed a responsive portfolio site showcasing projects, skills, and contact form with EmailJS integration.",
+      "Implemented smooth scroll and interactive 3D elements using GSAP and React Three Fiber.",
+      "Configured a full CI/CD pipeline: Docker image build & push to Docker Hub, plus Netlify deploy via GitHub Actions.",
+    ],
+    repoLink: "https://github.com/Manisankarrr/portfolio",
   },
   {
     title: "Optimal XI Insights using Data Analytics",
-    logoPath: "/images/devops.png",
+    logoPath: "/images/powerbi.png",
     review:
       "Power BI, Data Analytics, ESPN Cricinfo data scraping, Performance Metrics, Visualization, DAX.",
     responsibilities: [
@@ -183,7 +194,7 @@ const expCards = [
       "Created interactive dashboards using Power BI to visualize player stats and selection impact.",
     ],
     repoLink: "https://github.com/Manisankarrr/Optimal-XI-Insights",
-  },
+  }
 ];
 
 
