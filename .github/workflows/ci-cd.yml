@@ -1,6 +1,6 @@
+# .github/workflows/ci-cd.yml
 name: CI & CD
 
-# Trigger on pushes to main and PRs against main
 on:
   push:
     branches: [ main ]
@@ -12,12 +12,13 @@ env:
   NODE_VERSION: 18
 
 jobs:
-  # ---- Job 1: Build & Push Docker Image ----
+
+  # ── Job 1: Build & Push Docker Image ──
   docker:
     name: Build & Push Docker Image
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Log in to Docker Hub
@@ -26,7 +27,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build & push image
+      - name: Build & push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -34,13 +35,13 @@ jobs:
           push: true
           tags: ${{ env.IMAGE_NAME }}:latest
 
-  # ---- Job 2: Build Vite site & Deploy to Netlify ----
+  # ── Job 2: Build Vite Site & Deploy to Netlify ──
   netlify:
     name: Build & Deploy to Netlify
     needs: docker
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Node.js ${{ env.NODE_VERSION }}
