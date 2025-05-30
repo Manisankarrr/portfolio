@@ -1,34 +1,69 @@
-name: CI
+name: CI & CD
 
+# Trigger on pushes to main and PRs against main
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
+env:
+  IMAGE_NAME: manisankarrr/portfolio
+  NODE_VERSION: 18
+
 jobs:
-  build-and-test:
+  # ---- Job 1: Build & Push Docker Image ----
+  docker:
+    name: Build & Push Docker Image
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Check out code
+        uses: actions/checkout@v3
 
-      - name: Use Node.js 18
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build & push image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: ${{ env.IMAGE_NAME }}:latest
+
+  # ---- Job 2: Build Vite site & Deploy to Netlify ----
+  netlify:
+    name: Build & Deploy to Netlify
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
-          cache: "npm"
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint (if configured)
-        run: npm run lint
-
       - name: Build production bundle
         run: npm run build
 
-      - name: Preview & smoke-test
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          npm run preview -- --port 5173 &
-          sleep 5
-          curl --fail http://localhost:5173 || exit 1
+          netlify deploy \
+            --dir=dist \
+            --prod \
+            --site=$NETLIFY_SITE_ID
