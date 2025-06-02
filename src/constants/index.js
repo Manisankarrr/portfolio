@@ -12,7 +12,7 @@ const navLinks = [
     name: "Projects",
     link: "#projects",
   },
-  
+    
   {
     name: "Contact",
     link: "#contact",
@@ -222,6 +222,10 @@ const socialImgs = [
   {
     name: "insta",
     imgPath: "/images/insta.png",
+  },
+  {
+    name: "git",
+    imgPath: "/images/git.png",
   },
   
   {
