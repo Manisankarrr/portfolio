@@ -34,7 +34,7 @@ const counterItems = [
   { value: 4, suffix: "", label: "Completed Projects" },
   { value: 3, suffix: "", label: "Certifications" },
   { value: 3, suffix: "", label: "CI/CD Pipelines Built" },
-  { value: 7, suffix: "", label: "DevOps Tools Used" },
+  { value: 8, suffix: "", label: "DevOps Tools Used" },
 ];
 
 const logoIconsList = [
@@ -184,7 +184,7 @@ const expCards = [
     repoLink: "https://github.com/Manisankarrr/portfolio",
   },
   {
-    title: "Optimal XI Insights using Data Analytics",
+    title: "Optimal XI Insights using data ana",
     logoPath: "/images/powerbi.png",
     review:
       "Power BI, Data Analytics, ESPN Cricinfo data scraping, Performance Metrics, Visualization, DAX.",
