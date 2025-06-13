@@ -34,7 +34,7 @@ const counterItems = [
   { value: 4, suffix: "", label: "Completed Projects" },
   { value: 3, suffix: "", label: "Certifications" },
   { value: 3, suffix: "", label: "CI/CD Pipelines Built" },
-  { value: 8, suffix: "", label: "DevOps Tools Used" },
+  { value: 7, suffix: "", label: "DevOps Tools Used" },
 ];
 
 const logoIconsList = [
