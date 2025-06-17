@@ -140,4 +140,4 @@ jobs:
             --paths "/*"
 
       - name: Notify success
-        run: echo "✅ Portfolio site deployed to AWS S3 + CloudFront cache cleared!"
+        run: echo "✅ Portfolio site deployed to AWS S3 + CloudFront cache cleared!!"
