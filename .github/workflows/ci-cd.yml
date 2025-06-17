@@ -130,7 +130,6 @@ jobs:
           aws s3 sync ./dist s3://${{ env.BUCKET_NAME }} \
             --delete \
             --cache-control "max-age=0,no-cache,no-store,must-revalidate" \
-            --acl public-read
 
       - name: Notify success
         run: echo "✅ Portfolio site deployed to AWS S3"
