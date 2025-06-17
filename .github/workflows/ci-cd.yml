@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  DOCKERHUB_IMAGE: manisankarrr/portfolio  # Docker Hub: username/repo
+  DOCKERHUB_IMAGE: manisankarrr/portfolio  # Docker Hub: username/repo remains "portfolio"
   NODE_VERSION: 18
 
 jobs:
@@ -32,7 +32,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ${{ env.DOCKERHUB_IMAGE }}:latest  # ➤ manisankarrr/manish-portfolio:latest
+          tags: ${{ env.DOCKERHUB_IMAGE }}:latest  # Pushes: manisankarrr/portfolio:latest
 
   # ── Job 2: Build Vite Site & Deploy to Netlify ──
   netlify:
@@ -94,8 +94,8 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ${{ secrets.ECR_REPO }}/manish-portfolio:latest  # ➤ ECR push with custom image name
+          tags: ${{ secrets.ECR_REPO }}:latest  # This will push to your ECR repository "portfolio:latest"
 
       - name: Notify success
-        run: echo "✅ Docker image 'manish-portfolio' pushed to AWS ECR and Docker Hub!"
+        run: echo "✅ Docker image 'portfolio' pushed to AWS ECR and Docker Hub!"
         if: success()
