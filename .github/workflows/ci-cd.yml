@@ -100,7 +100,7 @@ jobs:
 
   # ── Job 4: AWS S3 ──
   s3:
-    name: Deploy to AWS S3 + CloudFront
+    name: Deploy to AWS S3
     runs-on: ubuntu-latest
     needs: docker
     steps:
