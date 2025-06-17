@@ -11,6 +11,7 @@ env:
   NODE_VERSION: 18
   BUCKET_NAME: manisankar-portfolio-site
   AWS_REGION: ap-south-1
+  CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
 
 jobs:
 
@@ -98,9 +99,9 @@ jobs:
       - name: Notify success
         run: echo "✅ Docker image 'portfolio' pushed to AWS ECR and Docker Hub!"
 
-  # ── Job 4: AWS S3 ──
+  # ── Job 4: AWS S3 + CloudFront ──
   s3:
-    name: Deploy to AWS S3
+    name: Deploy to AWS S3 + Invalidate CloudFront
     runs-on: ubuntu-latest
     needs: docker
     steps:
@@ -129,7 +130,14 @@ jobs:
         run: |
           aws s3 sync ./dist s3://${{ env.BUCKET_NAME }} \
             --delete \
-            --cache-control "max-age=0,no-cache,no-store,must-revalidate" \
+            --no-progress \
+            --cache-control "max-age=0,no-cache,no-store,must-revalidate"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ env.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"
 
       - name: Notify success
-        run: echo "✅ Portfolio site deployed to AWS S3"
+        run: echo "✅ Portfolio site deployed to AWS S3 + CloudFront cache cleared!"
