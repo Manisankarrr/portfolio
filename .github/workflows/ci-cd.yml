@@ -94,7 +94,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ${{ secrets.ECR_REPO}}:latest  # This will push to your ECR repository "portfolio:latest"
+          tags: ${{ secrets.ECR_REPO }}:latest  # This will push to your ECR repository "portfolio:latest"
 
       - name: Notify success
         run: echo "✅ Docker image 'portfolio' pushed to AWS ECR and Docker Hub!"
