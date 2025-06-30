@@ -1,7 +1,7 @@
 const Button = ({ text, className }) => {
   return (
     <a
-      href="/DC Resume.pdf" // ✅ Correct path with encoded space
+      href="/Dev Resume.pdf" // ✅ Correct path with encoded space
       target="_blank"
       rel="noopener noreferrer"
       className={`${className ?? ""} cta-wrapper`}

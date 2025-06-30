@@ -20,6 +20,7 @@
     "@react-three/drei": "^10.0.8",
     "@react-three/fiber": "^9.1.2",
     "@react-three/postprocessing": "^3.0.4",
+    "framer-motion": "^12.19.2",
     "gsap": "^3.13.0",
     "postprocessing": "^6.37.3",
     "react": "^19.1.0",

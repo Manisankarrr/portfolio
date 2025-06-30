@@ -1,0 +1,81 @@
+import { useEffect, useRef } from "react";
+
+export default function ParticleCursor() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    let particles = [];
+
+    const onResize = () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    };
+    window.addEventListener("resize", onResize);
+
+    const onMouseMove = (e) => {
+      for (let i = 0; i < 10; i++) {
+        particles.push({
+          x: e.clientX,
+          y: e.clientY,
+          vx: (Math.random() - 0.5) * 1,
+          vy: (Math.random() - 0.5) * 1,
+          radius: 6,
+          growth: 0.3 + Math.random() * 0.1,
+          opacity: 1,
+          decay: 0.008 + Math.random() * 0.004,
+        });
+      }
+    };
+    window.addEventListener("mousemove", onMouseMove);
+
+    let animId;
+    const animate = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      particles = particles.filter(p => p.opacity > 0);
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.radius += p.growth;
+        p.opacity -= p.decay;
+
+        const alpha = Math.max(p.opacity, 0);
+        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
+        gradient.addColorStop(0, `rgba(220,220,220,${alpha})`);
+        gradient.addColorStop(1, `rgba(220,220,220,0)`);
+
+        ctx.beginPath();
+        ctx.fillStyle = gradient;
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      animId = requestAnimationFrame(animate);
+    };
+    animate();
+
+    return () => {
+      cancelAnimationFrame(animId);
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("mousemove", onMouseMove);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        pointerEvents: 'none',
+        zIndex: 9998,
+      }}
+    />
+  );
+}

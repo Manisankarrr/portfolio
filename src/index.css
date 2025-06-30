@@ -479,3 +479,62 @@ section {
 .icon:hover {
   transform: scale(1.1);
 }
+/* App.css or index.css */
+
+.cursor-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+}
+
+.cursor-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #00ffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: all 0.1s ease;
+}
+/* Fluid, “gooey” cursor */
+.fluid-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: #00ffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  filter: url(#goo);
+  transform: translate3d(-50%, -50%, 0);
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  will-change: transform, width, height;
+}
+
+.fluid-cursor--active {
+  width: 20px;
+  height: 20px;
+  background: #00cccc;
+}
+
+.canvas-trail {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9998;
+}

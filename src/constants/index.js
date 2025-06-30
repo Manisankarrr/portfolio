@@ -34,7 +34,7 @@ const counterItems = [
   { value: 4, suffix: "", label: "Completed Projects" },
   { value: 3, suffix: "", label: "Certifications" },
   { value: 3, suffix: "", label: "CI/CD Pipelines Built" },
-  { value: 7, suffix: "", label: "DevOps Tools Used" },
+  { value: 6, suffix: "", label: "DevOps Tools Used" },
 ];
 
 const logoIconsList = [
@@ -149,6 +149,45 @@ const techStackIcons = [
 
 const expCards = [
   {
+  title: "DevOps Portfolio Website",
+  logoPath: "/images/devops.png",  // add an icon in your public/images folder
+  review:
+    "Vite, React, Tailwind CSS, Docker, GitHub Actions, Docker Hub, Netlify, AWS (S3, CloudFront).",
+  responsibilities: [
+    "Built and containerized a portfolio website using Vite, React, and Tailwind CSS with DevOps focus.",
+    "Automated CI/CD pipeline using GitHub Actions: Docker build, push to Docker Hub, and deploy to Netlify.",
+    "Planned and integrated cloud services: S3 and CloudFront for static hosting, ECR for container Registery.",
+  ],
+  repoLink: "https://github.com/Manisankarrr/portfolio",
+}
+,
+{
+  title: "Barber Shop Booking System (AWS DevOps)",
+  logoPath: "/images/aws.png",
+  review:
+    "HTML, Node.js, MySQL, AWS (ECS, RDS, S3, CloudFront), Docker, GitHub Actions, CI/CD, CloudFormation.",
+  responsibilities: [
+    "Built a full-stack barber booking system using HTML, Node.js, and MySQL with user authentication and slot booking features.",
+    "Containerized backend and deployed it on AWS ECS Fargate via ECR, connected to RDS (MySQL) within a custom VPC.",
+    "Hosted frontend on S3 with CloudFront distribution, and implemented automated CI/CD using GitHub Actions.",
+    "Provisioned complete cloud infrastructure using AWS CloudFormation (IaC) including VPC, subnets, and database.",
+  ],
+  repoLink: "https://github.com/Manisankarrr/barber-shop-sql",
+}
+,
+  {
+    title: "Optimal XI Insights using data ana",
+    logoPath: "/images/powerbi.png",
+    review:
+      "Power BI, Data Analytics, ESPN Cricinfo data scraping, Performance Metrics, Visualization, DAX.",
+    responsibilities: [
+      "Collected cricket match data from ESPN Cricinfo and performed data cleaning and transformation.",
+      "Analyzed batting averages, bowling economy, and other metrics to recommend best playing XI.",
+      "Created interactive dashboards using Power BI to visualize player stats and selection impact.",
+    ],
+    repoLink: "https://github.com/Manisankarrr/Optimal-XI-Insights",
+  },
+  {
     title: "Real-Time Chat Application",
     logoPath: "/images/aws.png",
     review:
@@ -171,30 +210,7 @@ const expCards = [
       "Enabled probability-based output with symptom analysis for user diagnosis support.",
     ],
     repoLink: "https://github.com/Manisankarrr/Predictive-Diagnosis-WebApp",
-  },{
-    title: "Portfolio Website",
-    logoPath: "/images/devops.png",          // add an icon in your public/images folder
-    review:
-      "Vite, React, Tailwind CSS, GSAP animations, EmailJS, Docker, GitHub Actions CI/CD, Netlify.",
-    responsibilities: [
-      "Developed a responsive portfolio site showcasing projects, skills, and contact form with EmailJS integration.",
-      "Implemented smooth scroll and interactive 3D elements using GSAP and React Three Fiber.",
-      "Configured a full CI/CD pipeline: Docker image build & push to Docker Hub, plus Netlify deploy via GitHub Actions.",
-    ],
-    repoLink: "https://github.com/Manisankarrr/portfolio",
   },
-  {
-    title: "Optimal XI Insights using data ana",
-    logoPath: "/images/powerbi.png",
-    review:
-      "Power BI, Data Analytics, ESPN Cricinfo data scraping, Performance Metrics, Visualization, DAX.",
-    responsibilities: [
-      "Collected cricket match data from ESPN Cricinfo and performed data cleaning and transformation.",
-      "Analyzed batting averages, bowling economy, and other metrics to recommend best playing XI.",
-      "Created interactive dashboards using Power BI to visualize player stats and selection impact.",
-    ],
-    repoLink: "https://github.com/Manisankarrr/Optimal-XI-Insights",
-  }
 ];
 
 
