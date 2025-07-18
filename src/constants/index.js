@@ -176,7 +176,7 @@ const expCards = [
 }
 ,
   {
-    title: "Optimal XI Insights using data ana",
+    title: "Optimal XI Insights using Data Analytics",
     logoPath: "/images/powerbi.png",
     review:
       "Power BI, Data Analytics, ESPN Cricinfo data scraping, Performance Metrics, Visualization, DAX.",
