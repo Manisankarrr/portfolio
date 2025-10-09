@@ -63,28 +63,6 @@ NETLIFY_SITE_ID	Unique Netlify site ID
 
 🔗 https://manisankar.netlify.app
 
-🧠 Projects Showcased
-🔹 Real-Time Chat Application
-MERN Stack, Socket.IO
-
-Private + Public chat rooms
-
-GitHub Repo
-
-🔹 Predictive Diagnosis System
-Streamlit, XGBoost, ML
-
-Multiple disease prediction
-
-GitHub Repo
-
-🔹 Optimal XI Insights (Cricket Analytics)
-Power BI, Data Scraping
-
-Cricket XI analysis from ESPN data
-
-GitHub Repo
-
 🧰 How to Run Locally
 bash
 Copy code
