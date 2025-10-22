@@ -31,9 +31,9 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 5, suffix: "", label: "Completed Projects" },
+  { value: 7, suffix: "", label: "Completed Projects" },
   { value: 3, suffix: "", label: "Certifications" },
-  { value: 3, suffix: "", label: "CI/CD Pipelines Built" },
+  { value: 4, suffix: "", label: "CI/CD Pipelines Built" },
   { value: 6, suffix: "", label: "DevOps Tools Used" },
 ];
 
@@ -75,19 +75,19 @@ const logoIconsList = [
 
 const abilities = [
   {
-    imgPath: "/images/devops.png",
-    title: "Infrastructure & Automation",
-    desc: "Docker, Docker Compose, Kubernetes, Bash & Linux – Automating deployments and system orchestration."
+    "imgPath": "/images/aiml.webp",
+    "title": "AI / ML",
+    "desc": "TensorFlow, PyTorch, Scikit-learn, XGBoost, DL, NLP, RAG, LLM Orchestration, Gradio, Flask, OpenRouter API.",
   },
   {
-    imgPath: "/images/aws.png",
-    title: "Cloud & CI/CD",
-    desc: "AWS, Jenkins, GitHub Actions, Prometheus & Grafana – Ensuring scalable, reliable, and observable pipelines."
+    "imgPath": "/images/aws.png",
+    "title": "Cloud Infrastructure",
+    "desc": "AWS, Kubernetes, Docker Compose, Linux.",
   },
   {
-    imgPath: "/images/backend.png",
-    title: "Full-Stack Development",
-    desc: "React.js, Node.js, Express.js, Tailwind CSS, MySQL, MongoDB, Python & C – Building end-to-end web solutions."
+    "imgPath": "/images/devops.png",
+    "title": "DevOps & Automation",
+    "desc": "GitHub Actions (CI/CD), Docker, Jenkins, Prometheus, Grafana, Bash, Python.",
   }
 ];
 
@@ -148,6 +148,30 @@ const techStackIcons = [
 ];
 
 const expCards = [
+  {
+  "title": "Intelligent Prompt Optimization Platform (IPO-Meta)",
+  "logoPath": "/images/aiml.webp", 
+  "review": "Gradio, Flask, OpenAI SDK, OpenRouter API, GitHub Actions, Docker, Hugging Face Spaces.",
+  "responsibilities": [
+    "Engineered a **GPU-Free MLOps Pipeline** using GitHub Actions to automate continuous learning and prompt refinement.",
+    "Built a **containerized Flask proxy backend** to serve a custom HTML/CSS frontend, managing API calls to the deployed Gradio application.",
+    "Orchestrated two external LLMs via **OpenRouter** to systematically rewrite vague user prompts and execute the final answer based on user feedback.",
+  ],
+  "repoLink": "https://github.com/Manisankarrr/promptTune",
+},
+  {
+  "title": "AI Project Roadmap Generator",
+  "logoPath": "/images/aiicon.png",
+  "review":
+    "RAG, Google Gemini API, OPENAI API, Python, Flask, ChromaDB, Docker, CI/CD, GitHub Actions, JavaScript, Tailwind CSS, jsPDF.",
+  "responsibilities": [
+    "Engineered an advanced Retrieval-Augmented Generation (RAG) pipeline integrating the Google Gemini API with a ChromaDB vector database to provide hyper-personalized project recommendations.",
+    "Automated the end-to-end application lifecycle with a full CI/CD pipeline using GitHub Actions, containerizing the backend with Docker for Docker Hub and deploying the frontend to Vercel.",
+    "Architected a data retrieval system that analyzes and synthesizes developer skills from the GitHub API with market trends to inform the AI's strategic recommendations.",
+    "Developed a responsive frontend with a client-side PDF report generator using jsPDF to create structured, downloadable roadmaps."
+  ],
+  "repoLink": "https://github.com/Manisankarrr/ai-roadmap-generator"
+},
   {
   title: "DevOps Portfolio Website",
   logoPath: "/images/devops.png",  // add an icon in your public/images folder
