@@ -31,7 +31,7 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 7, suffix: "", label: "Completed Projects" },
+  { value: 9, suffix: "", label: "Completed Projects" },
   { value: 3, suffix: "", label: "Certifications" },
   { value: 4, suffix: "", label: "CI/CD Pipelines Built" },
   { value: 6, suffix: "", label: "DevOps Tools Used" },
@@ -149,6 +149,20 @@ const techStackIcons = [
 
 const expCards = [
   {
+  "title": "AccessoryIQ – Evidence-Based Accessory Recommendation System",
+  "logoPath": "/images/aiicon.png",
+  "review":
+    "RAG, Agent-based AI, Python, FAISS, Sentence Transformers, OpenRouter API, Web Search (Serper), Gradio, Docker.",
+  "responsibilities": [
+    "Designed a dual-agent RAG system (Planner + Evidence) to recommend compatible accessories for phones, laptops, TVs, and gaming consoles using official manufacturer PDFs as ground truth.",
+    "Implemented strict hallucination control with RAG-first retrieval, controlled web search fallback, confidence scoring, and explicit refusal when evidence was insufficient.",
+    "Built a modular Python backend using FAISS vector search and sentence-transformer embeddings to ensure accurate, explainable, and scalable retrieval.",
+    "Developed an interactive Gradio UI enabling category-aware accessory selection and real-time, source-cited recommendations."
+  ],
+  "repoLink": "https://github.com/Manisankarrr/AccessoryIQ"
+}
+,
+  {
   "title": "Intelligent Prompt Optimization Platform (IPO-Meta)",
   "logoPath": "/images/aiml.webp", 
   "review": "Gradio, Flask, OpenAI SDK, OpenRouter API, GitHub Actions, Docker, Hugging Face Spaces.",
@@ -159,6 +173,20 @@ const expCards = [
   ],
   "repoLink": "https://github.com/Manisankarrr/promptTune",
 },
+{
+  "title": "DocuMind – Intelligent Document Question Answering System",
+  "logoPath": "/images/aiml.webp",
+  "review":
+    "RAG, Python, LangChain, FAISS, Sentence Transformers, OpenAI / LLM APIs, PDF Processing, Gradio.",
+  "responsibilities": [
+    "Built a Retrieval-Augmented Generation (RAG) system to enable accurate question answering over uploaded PDF documents using vector embeddings and semantic search.",
+    "Implemented document ingestion, chunking, and FAISS-based retrieval to ensure responses were grounded strictly in source documents.",
+    "Designed prompt logic and context handling to minimize hallucinations and return document-cited answers only.",
+    "Developed a simple Gradio-based interface allowing users to upload documents and interact with them in real time."
+  ],
+  "repoLink": "https://github.com/Manisankarrr/DocuMind"
+}
+,
   {
   "title": "AI Project Roadmap Generator",
   "logoPath": "/images/aiicon.png",
