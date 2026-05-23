@@ -31,7 +31,7 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 9, suffix: "", label: "Completed Projects" },
+  { value: 10, suffix: "", label: "Completed Projects" },
   { value: 3, suffix: "", label: "Certifications" },
   { value: 4, suffix: "", label: "CI/CD Pipelines Built" },
   { value: 6, suffix: "", label: "DevOps Tools Used" },
@@ -148,6 +148,49 @@ const techStackIcons = [
 ];
 
 const expCards = [
+
+{
+  "title": "AccessoryIQ v2 – Multi-Agent Self-Healing RAG System",
+  "logoPath": "/images/aiml.webp",
+  "review":
+    "Generative AI, Multi-Agent RAG, Self-Healing Retrieval, FAISS, FastAPI, Gradio, HuggingFace Embeddings, Groq LLMs, Serper API, Docker.",
+  "responsibilities": [
+    "Architected a 6-agent self-healing RAG pipeline for accessory compatibility intelligence, combining FAISS vector retrieval, query rewriting, and web fallback search to deliver evidence-grounded recommendations.",
+    "Implemented hallucination prevention using confidence scoring, trust-weighted source ranking, citation verification, and explicit refusal logic when reliable evidence was unavailable.",
+    "Built a modular FastAPI backend with structured observability logging and real-time retrieval diagnostics to track RAG, self-healing, and fallback execution paths.",
+    "Developed an interactive Gradio frontend supporting source-cited compatibility analysis across phones, laptops, chargers, cables, docks, and accessories."
+  ],
+  "repoLink": "https://github.com/Manisankarrr/AccessoryIQ-V2"
+},
+{
+  "title": "RepoAnalyzer – AI-Powered Repository Analysis System",
+  "logoPath": "/images/aiicon.png",
+  "review":
+    "Generative AI, RAG, FAISS, FastAPI, Streamlit, OpenRouter API, Sentence Transformers, GitHub API, Docker.",
+  "responsibilities": [
+    "Developed an AI-powered repository analysis platform that ingests GitHub repositories, analyzes source code structure, and generates file-level documentation with contextual explanations.",
+    "Implemented a Retrieval-Augmented Generation (RAG) pipeline using FAISS vector search and sentence-transformer embeddings to enable semantic codebase querying and context-aware developer assistance.",
+    "Built automated documentation workflows including README generation, .gitignore generation, and intelligent repository summarization using LLM-powered analysis.",
+    "Integrated GitHub API-based repository ingestion with a FastAPI backend and interactive Streamlit frontend, enabling real-time repository understanding and developer onboarding support."
+  ],
+  "repoLink": "https://github.com/Manisankarrr/DocWizard"
+}
+,
+
+{
+  "title": "ResumeIQ – AI-Powered Resume Screening System",
+  "logoPath": "/images/aiml.webp",
+  "review":
+    "Generative AI, LangGraph, RAG, FAISS, FastAPI, Streamlit, OpenRouter API, Sentence Transformers, LangSmith, Docker.",
+  "responsibilities": [
+    "Engineered a LangGraph-based multi-stage resume screening pipeline for skill extraction, embedding generation, and candidate ranking using Llama 3.3-70B and FAISS similarity search.",
+    "Implemented semantic skill-gap analysis with sentence-transformer embeddings to match candidate resumes against job descriptions with explainable ranking outputs.",
+    "Built a production-grade FastAPI + Streamlit application with PyMuPDF parsing, structured observability logging, and resilient fallback handling for reliable AI-driven screening workflows.",
+    "Deployed the system on Hugging Face Spaces with real-time candidate ranking, CSV export support, and audit-friendly recruiter insights."
+  ],
+  "repoLink": "https://github.com/Manisankarrr/ResumeIQ"
+}
+,
   {
   "title": "AccessoryIQ – Evidence-Based Accessory Recommendation System",
   "logoPath": "/images/aiicon.png",
@@ -162,17 +205,6 @@ const expCards = [
   "repoLink": "https://github.com/Manisankarrr/AccessoryIQ"
 }
 ,
-  {
-  "title": "Intelligent Prompt Optimization Platform (IPO-Meta)",
-  "logoPath": "/images/aiml.webp", 
-  "review": "Gradio, Flask, OpenAI SDK, OpenRouter API, GitHub Actions, Docker, Hugging Face Spaces.",
-  "responsibilities": [
-    "Engineered a **GPU-Free MLOps Pipeline** using GitHub Actions to automate continuous learning and prompt refinement.",
-    "Built a **containerized Flask proxy backend** to serve a custom HTML/CSS frontend, managing API calls to the deployed Gradio application.",
-    "Orchestrated two external LLMs via **OpenRouter** to systematically rewrite vague user prompts and execute the final answer based on user feedback.",
-  ],
-  "repoLink": "https://github.com/Manisankarrr/promptTune",
-},
 {
   "title": "DocuMind – Intelligent Document Question Answering System",
   "logoPath": "/images/aiml.webp",
@@ -187,19 +219,6 @@ const expCards = [
   "repoLink": "https://github.com/Manisankarrr/DocuMind"
 }
 ,
-  {
-  "title": "AI Project Roadmap Generator",
-  "logoPath": "/images/aiicon.png",
-  "review":
-    "RAG, Google Gemini API, OPENAI API, Python, Flask, ChromaDB, Docker, CI/CD, GitHub Actions, JavaScript, Tailwind CSS, jsPDF.",
-  "responsibilities": [
-    "Engineered an advanced Retrieval-Augmented Generation (RAG) pipeline integrating the Google Gemini API with a ChromaDB vector database to provide hyper-personalized project recommendations.",
-    "Automated the end-to-end application lifecycle with a full CI/CD pipeline using GitHub Actions, containerizing the backend with Docker for Docker Hub and deploying the frontend to Vercel.",
-    "Architected a data retrieval system that analyzes and synthesizes developer skills from the GitHub API with market trends to inform the AI's strategic recommendations.",
-    "Developed a responsive frontend with a client-side PDF report generator using jsPDF to create structured, downloadable roadmaps."
-  ],
-  "repoLink": "https://github.com/Manisankarrr/ai-roadmap-generator"
-},
   {
   title: "DevOps Portfolio Website",
   logoPath: "/images/devops.png",  // add an icon in your public/images folder
